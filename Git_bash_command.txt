@@ -1,0 +1,12 @@
+existing repo if
+git init
+git add .
+git commit -m "initial commit"
+git push origin main
+
+new repo
+git init
+git commit -m "initial"
+git branch -m main
+git remote add origin <remote url>
+git push origin main
