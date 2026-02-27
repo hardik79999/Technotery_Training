@@ -143,3 +143,8 @@ class Computer:
 computer = Computer()
 computer.cpu.process()
 computer.ram.store()
+
+
+
+
+
