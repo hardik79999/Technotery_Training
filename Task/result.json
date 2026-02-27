@@ -1,0 +1,31 @@
+{
+    "EMAIL": [
+        "admin@server.local",
+        "alex99@yahoo.com",
+        "billing@finance-dept.org",
+        "ceo.office@corporate.com",
+        "customer.service@my-company.com",
+        "customer1@business.io",
+        "customer2@business.io",
+        "emily.clark@outlook.com",
+        "good.email123@valid-domain.com",
+        "helpdesk@tech-support.net",
+        "hr_department@corporate.com",
+        "it-admin@corporate.com",
+        "jane_smith@company.org",
+        "johndoe@gmail.com",
+        "mike.tyson@boxing.com",
+        "robert_brown123@hotmail.com",
+        "sales-team@my-company.com",
+        "sarah.connor1984@future.net",
+        "support.team@enterprise.co.uk",
+        "test.user+promo@gmail.com"
+    ],
+    "PHONE": [
+        "123-444-8888",
+        "555-000-1111",
+        "555-123-9999",
+        "666-222-3333",
+        "777-888-9999"
+    ]
+}
