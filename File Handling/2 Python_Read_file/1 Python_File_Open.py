@@ -66,3 +66,30 @@ print("-------------------------------------------------------------------------
 
 with open("demofile.txt") as f:
     print(f.read(8)) # Fort Sou
+
+
+# Read Lines ----------------------------------------------------------------
+
+# You can return one line by using the readline() method:
+
+with open("demofile.txt") as f:
+    print(f.readline()) # Fort Southerland is a redoubt built during the American Civil War to protect Camden,
+
+
+# By calling readline() two times, you can read the two first lines:
+
+# Example
+
+# Read two lines of the file:
+print("---------------------------------------------------------------------------------------------------------------------------------\n")
+
+with open("demofile.txt") as f:
+    print(f.readline())
+    print(f.readline())
+
+
+# Loop through the file line by line:
+
+with open("demofile.txt") as f:
+    for i in f:
+        print(i)
