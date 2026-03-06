@@ -118,7 +118,7 @@ def update_post(post_id):
 
 
 
-@app.route('/delete-post/<int:post_id>')
+@app.route('/delete-post/<int:post_id>', )
 def delete_post(post_id):
     conn = database()
     cursor = conn.cursor()
