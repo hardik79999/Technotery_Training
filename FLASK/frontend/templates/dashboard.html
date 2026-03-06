@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0f172a; /* Dark Slate Background */
+            color: #f8fafc;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .dashboard-container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* --- Sidebar Styling --- */
+        .sidebar {
+            width: 280px;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(15px); /* Glassmorphism Effect */
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #38bdf8; /* Neon Blue */
+            margin-bottom: 3rem;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #94a3b8;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            transform: translateX(8px);
+        }
+
+        /* --- CREATE POST Button Magic --- */
+        .nav-links a.create-btn {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: #ffffff;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+            justify-content: center;
+        }
+
+        .nav-links a.create-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.7);
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #fff;
+        }
+
+        /* --- Main Content Styling --- */
+        .main-content {
+            flex: 1;
+            padding: 3rem;
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+
+        .user-profile img {
+            border-radius: 50%;
+            border: 2px solid #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .user-profile img:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Cards Grid --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .card h3 {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>Dashboard</h2>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="/" class="active">
+                        <i class="fas fa-home"></i> HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="/create-post" class="create-btn">
+                        <i class="fas fa-plus-circle"></i> CREATE POST
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header>
+                <h1>Welcome Back!</h1>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=38bdf8&color=fff&rounded=true" alt="Profile">
+                </div>
+            </header>
+
+            <section class="cards-grid">
+                {% for post in posts %}
+                <div class="card" style="position: relative; cursor: pointer;" onclick="window.location.href='/update-post/{{ post.id }}'">
+                    <a href="/delete-post/{{ post.id }}" 
+                        onclick="event.stopPropagation(); return confirm('Bhai, pakka delete karna hai?');" 
+                        style="position: absolute; top: 15px; right: 15px; color: #ef4444; font-size: 1.2rem; z-index: 10;">
+                            <i class="fas fa-trash"></i>
+                    </a>
+
+                    <h3>{{ post.title }}</h3>
+                    <p style="font-size: 0.85rem; color: #38bdf8; margin-bottom: 5px;">
+                        <i class="fas fa-user"></i> {{ post.author }} | 
+                        <i class="fas fa-clock"></i> {{ post.created_at.strftime('%d %b, %Y') }}
+                    </p>
+                    <p style="font-size: 0.8rem; color: #38bdf8;">
+                        By {{ post.author }} | {{ post.created_at.strftime('%d-%m-%Y %H:%M') if post.created_at else '' }}
+                    </p>
+                </div>
+                {% endfor %}
+            </section>
+        </main>
+    </div>
+</body>
+</html>
