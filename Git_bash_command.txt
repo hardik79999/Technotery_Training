@@ -10,3 +10,5 @@ git commit -m "initial"
 git branch -m main
 git remote add origin <remote url>
 git push origin main
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
