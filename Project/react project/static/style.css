@@ -1,0 +1,55 @@
+body {
+    background-color: #0f0f1a; /* Vision UI deep dark */
+    background-image: radial-gradient(circle at top right, rgba(0, 198, 255, 0.1), transparent 40%),
+                      radial-gradient(circle at bottom left, rgba(255, 65, 108, 0.1), transparent 40%);
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* 🚀 Vision UI Glassmorphism Card */
+.card-3d {
+    background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.card-3d:hover { transform: translateY(-3px); }
+
+/* Custom Scrollbar for tasks */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(0, 198, 255, 0.5); border-radius: 10px; }
+
+/* Modal & Input Dark Theme */
+.modal-content {
+    background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.98) 19.41%, rgba(10, 14, 35, 0.98) 76.65%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px;
+}
+.modal-header, .modal-footer { border-color: rgba(255,255,255,0.05) !important; }
+.form-control, .form-select {
+    background-color: rgba(15, 15, 26, 0.8) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px;
+}
+.form-control::placeholder { color: #8f8f9d !important; opacity: 1 !important; }
+.form-control:focus, .form-select:focus {
+    border-color: #00c6ff !important;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.3) !important;
+}
+
+/* 🚀 Vision UI Glowing Buttons */
+.btn-3d {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border: none; color: white; padding: 12px 20px;
+    border-radius: 12px; font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 198, 255, 0.4);
+    transition: all 0.3s;
+}
+.btn-3d:hover { box-shadow: 0 6px 20px rgba(0, 198, 255, 0.6); transform: translateY(-2px); }
+.role-section { display: none; }

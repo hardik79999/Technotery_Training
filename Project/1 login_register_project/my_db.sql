@@ -7,5 +7,5 @@ CREATE TABLE users (
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL
 );
-truncate uzsers;
+truncate users;
 select * from users;

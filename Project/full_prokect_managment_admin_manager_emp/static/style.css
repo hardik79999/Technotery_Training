@@ -1,0 +1,99 @@
+/* static/style.css */
+body {
+    background-color: #12121c;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* 3D Glassmorphism Card */
+.card-3d {
+    background: rgba(30, 30, 47, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: perspective(1000px) rotateX(2deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-3d:hover {
+    transform: perspective(1000px) rotateX(0deg) translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Modal Dark Theme Fix */
+.modal-content {
+    background-color: #1e1e2f;
+    color: white;
+    border: 1px solid #3f3f5a;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+.modal-header { border-bottom: 1px solid #3f3f5a; }
+.modal-footer { border-top: 1px solid #3f3f5a; }
+
+/* Input Fields & Placeholders */
+.form-control {
+    background: #2a2a40;
+    border: 1px solid #3f3f5a;
+    color: white;
+}
+.form-control:focus {
+    background: #2a2a40;
+    color: white;
+    border-color: #00c6ff;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+}
+.form-control::placeholder {
+    color: #a0a0b5 !important;
+    opacity: 1;
+}
+
+/* Buttons */
+.btn-3d {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border: none; color: white; padding: 10px 20px;
+    border-radius: 10px; font-weight: bold;
+    transition: all 0.2s;
+}
+.btn-3d:active { transform: translateY(3px); }
+
+.role-section { display: none; }
+
+/* ==========================================
+   🚀 MODAL & INPUT DARK THEME FIX
+   ========================================== */
+.modal-content {
+    background-color: #1e1e2f !important; 
+    color: #ffffff !important; 
+    border: 1px solid #3f3f5a !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid #3f3f5a !important;
+}
+
+.modal-title {
+    color: #00c6ff !important;
+}
+
+/* Input Boxes Fix */
+.form-control, .form-select {
+    background-color: #2a2a40 !important; 
+    color: #ffffff !important; 
+    border: 1px solid #3f3f5a !important;
+}
+
+.form-control::placeholder {
+    color: #a0a0b5 !important;
+    opacity: 1 !important;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #2a2a40 !important;
+    color: #ffffff !important;
+    border-color: #00c6ff !important;
+    box-shadow: 0 0 8px rgba(0, 198, 255, 0.4) !important;
+}
